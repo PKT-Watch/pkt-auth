@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pkt-auth demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="scaffold">
+        <div class="intro">
+            <h1>pkt-auth</h1>
+            <p>Exploring anonymous user authentication with PKT wallet.</p>
+        </div>
+        <div class="page mode-register">
+            <div class="register-section">
+                <div class="form-panel card p-5">
+                    <div class="form">
+                        <h1 class="mb-5">Register</h1>
+    
+                        <div class="mb-5">
+                            <label for="registerPktAddress" class="form-label">Your PKT Address</label>
+                            <input type="text" class="form-control form-control-lg" id="registerPktAddress">
+                            <div id="registerPktAddressHelp" class="form-text">You must own the private key for this address.</div>
+                        </div>
+    
+                        <div class="d-grid">
+                            <button id="btnRegister" type="button" class="btn btn-primary btn-lg">Register</button>
+                        </div>
+
+                        <div class="text-center mt-5">
+                            <button id="btnShouldLogin" class="btn btn-text">Already have an account? Login</button>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="login-section">
+                <div class="form-panel card p-5">
+                    <div class="form">
+                        <div class="login-step login-step-1 active">
+                            <h1 class="mb-5">Login <span class="step-count">1 / 2</span></h1>
+
+                            <div class="mb-5">
+                                <label for="requestLoginPktAddress" class="form-label">Your PKT Address</label>
+                                <input type="text" class="form-control form-control-lg" id="requestLoginPktAddress">
+                            </div>
+        
+                            <div class="d-grid">
+                                <button id="btnRequestLogin" type="button" class="btn btn-primary btn-lg mb-3">Submit</button>
+                            </div>
+
+                            <div class="text-center mt-5">
+                                <button id="btnShouldRegister" class="btn btn-text">Need an account? Register</button>
+                            </div>
+                        </div>
+                        
+                        <div class="login-step login-step-2">
+                            <h1 class="mb-5">Login <span class="step-count">2 / 2</span></h1>
+
+                            <p>Sign this message using your address</p>
+
+                            <div class="mb-3">
+                                <label for="requestLoginMessage" class="form-label">Message to sign</label>
+                                <input type="text" class="form-control form-control-lg" id="requestLoginMessage" readonly>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="requestLoginPktAddressDisplay" class="form-label">Your PKT address</label>
+                                <input type="text" class="form-control form-control-lg" id="requestLoginPktAddressDisplay" readonly>
+                            </div>
+        
+                            <hr>
+                            
+                            <p>Enter the signed message signature</p>
+                            <div class="mb-3">
+                                <label for="verifySignature" class="form-label">Signature</label>
+                                <input type="text" class="form-control form-control-lg" id="verifySignature">
+                            </div>
+        
+                            <div class="mb-3 d-grid">
+                                <button id="btnVerifySignature" type="button" class="btn btn-primary btn-lg mb-3">Verify</button>
+                            </div>
+                        </div>
+
+                        <div class="login-step login-step-3">
+                            <h1 class="mb-5">Authenticated</h1>
+                            <p>Congratulations, you are now authenticated.</p>
+
+                            <div class="mt-5">
+                                <label for="authenticationToken" class="form-label">Authentication token</label>
+                                <input type="text" class="form-control form-control-lg" id="authenticationToken" readonly>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="content-section">
+                <div class="content-register lead">
+                    <h1 class="mb-5">Register with pkt-auth</h1>
+    
+                    <p>Registering a user account with pkt-auth requires only one piece of information; a PKT wallet address.</p>
+                    <p>The user must own the private key but does not need to share it with the application.</p>
+                    <p>Applications may optionally collect other information, but only the address is required for authentication.</p>
+                </div>
+                <div class="content-login lead">
+                    <h1 class="mb-5">Authenticate with pkt-auth</h1>
+    
+                    <p>Authenticating a user with pkt-auth is a two step process.</p>
+                    <p>1. First, the user enters the address associated with their account.</p>
+                    <p>If the address matches a registered user, a "message" is generated on the server and displayed to the user.</p>
+                    <p>2. The message must be signed by the user, using the same address associated with their account.</p>
+                    <p>The signature is then verified and the user is authenticated or rejected.</p>
+
+                    <p class="alert alert-dark mt-5">Message signing is currently only possible using pktwallet (CLI) or the PKT Electrum wallet.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    
+</body>
+</html>

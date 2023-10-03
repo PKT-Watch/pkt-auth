@@ -1,0 +1,166 @@
+:root {
+  --color-light: #fff;
+  --color-medium: #bdd3cc;
+  --color-dark: #0f282f;
+  --color-error: #9a1e1e;
+  --color-highlight: #00d37f;
+  --color-button-hover: #01be72;
+  --color-border: #91aaa2;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.page {
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  background: #44434b;
+}
+.page .content-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50vw;
+  transition: all 1s 0.125s ease;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page .login-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50vw;
+  transition: all 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page .register-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50vw;
+  transition: all 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.page .content-register {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s ease;
+  max-width: 80%;
+}
+.page .content-login {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s ease;
+  max-width: 80%;
+}
+.page.mode-login .content-section {
+  transform: translate3d(50vw, 0, 0);
+}
+.page.mode-login .login-section {
+  transition: all 1s 0.25s ease;
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+.page.mode-login .register-section {
+  transform: translate3d(100vw, 0, 0);
+  opacity: 0;
+}
+.page.mode-login .content-login {
+  opacity: 1;
+  transition: all 1s 1s ease;
+}
+.page.mode-register .content-section {
+  transform: translate3d(0, 0, 0);
+}
+.page.mode-register .login-section {
+  transform: translate3d(-50vw, 0, 0);
+  opacity: 0;
+}
+.page.mode-register .register-section {
+  transition: all 1s 0.25s ease;
+  transform: translate3d(50vw, 0, 0);
+  opacity: 1;
+}
+.page.mode-register .content-register {
+  opacity: 1;
+  transition: all 1s 1s ease;
+}
+
+.scaffold {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 6fr);
+  background: #000;
+}
+
+.alert.alert-dark {
+  background: rgba(0, 0, 0, 0.4);
+  color: #FFF;
+  border-color: #000;
+}
+
+.form-panel {
+  padding: 2rem;
+  width: 90%;
+  height: 90%;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.form-panel .form {
+  width: 100%;
+  height: 100%;
+  max-width: 460px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+}
+
+.login-step {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+.login-step.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.login-step h1 {
+  display: flex;
+  align-items: center;
+}
+.login-step .step-count {
+  font-size: 0.6em;
+  background: #f2f2f2;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  margin-left: auto;
+}/*# sourceMappingURL=main.css.map */

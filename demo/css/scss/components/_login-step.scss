@@ -1,0 +1,27 @@
+.login-step {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+
+    &.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    h1 {
+        display: flex;
+        align-items: center;
+    }
+
+    .step-count {
+        font-size: .6em;
+        background: #f2f2f2;
+        padding: .5rem .75rem;
+        border-radius: 8px;
+        margin-left: auto;
+    }
+}

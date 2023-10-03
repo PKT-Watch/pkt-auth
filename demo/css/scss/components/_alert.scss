@@ -1,0 +1,7 @@
+.alert {
+    &.alert-dark {
+        background: rgba(0,0,0,.4);
+        color: #FFF;
+        border-color: #000;
+    }
+}
