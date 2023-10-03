@@ -18,8 +18,7 @@ const verifySignature = document.querySelector('#verifySignature');
 const authenticationToken = document.querySelector('#authenticationToken');
 const btnVerifySignature = document.querySelector('#btnVerifySignature');
 
-//const apiUrl = 'http://127.0.0.1:3001';
-const apiUrl = 'https://auth.pkt.watch';
+const apiUrl = 'http://127.0.0.1:3001';
 
 btnRegister.addEventListener('click', async _ => {
     const address = registerPktAddress.value;
