@@ -5,7 +5,7 @@ This is an experiment and should not be used in a production environment.
 
 # Demo
 
-[https://pkt.watch/pkt-auth/](https://pkt.watch/pkt-auth/)
+[https://pkt.watch/pkt-auth/](https://pkt.watch/pkt-auth/) (Desktop only)
 
 # Getting started
 
